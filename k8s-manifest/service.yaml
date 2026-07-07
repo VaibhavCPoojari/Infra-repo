@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: image-annotation-tool-service
+spec:
+  selector:
+    app: image-annotation-tool
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 80

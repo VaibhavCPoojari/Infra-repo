@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: image-annotation-tool
+  labels:
+    app: image-annotation-tool
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: image-annotation-tool
+  template:
+    metadata:
+      labels:
+        app: image-annotation-tool
+    spec:
+      containers:
+      - name: image-annotation-tool
+        image: vaibhavpoojari/annotation-tool:latest
+        ports:
+        - containerPort: 80
